@@ -655,4 +655,44 @@ h2 { color: #202d37; font-size: clamp(2.25rem, 4vw, 3.7rem); line-height: .98; }
   .video-thumbnail, .video-thumbnail img { min-height: 178px; }
 }
 
+/* Motion stays short and restrained so it supports reading without delaying it. */
+html.motion-enabled .hero-copy { animation: atlas-enter 620ms cubic-bezier(.2,.7,.2,1) both; }
+html.motion-enabled .hero-art { animation: atlas-settle 900ms cubic-bezier(.2,.7,.2,1) both; }
+html.motion-enabled .chapter-accordion[open] > .chapter-panel { animation: chapter-unfold 360ms ease-out both; }
+
+html.motion-enabled .motion-reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 440ms ease var(--motion-delay, 0ms), transform 440ms cubic-bezier(.2,.7,.2,1) var(--motion-delay, 0ms);
+}
+html.motion-enabled .motion-reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+.chapter-summary { transition: background-color 180ms ease; }
+.chapter-accordion:not([open]) > .chapter-summary:hover { background: rgba(231, 224, 209, .48); }
+.domain-card, .framework-card, .expansion-card { transition: border-color 180ms ease, background-color 180ms ease, transform 180ms ease; }
+.domain-card:hover, .framework-card:hover { transform: translateY(-3px); border-color: #bdb4a3; }
+.expansion-card:hover { background: rgba(255,255,255,.045); }
+
+@keyframes atlas-enter {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes atlas-settle {
+  from { transform: scale(1.035); }
+  to { transform: scale(1); }
+}
+@keyframes chapter-unfold {
+  from { opacity: .55; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.motion-enabled .hero-copy,
+  html.motion-enabled .hero-art,
+  html.motion-enabled .chapter-accordion[open] > .chapter-panel { animation: none !important; }
+  html.motion-enabled .motion-reveal { opacity: 1; transform: none; transition: none; }
+  .chapter-summary, .domain-card, .framework-card, .expansion-card { transition: none; }
+  .domain-card:hover, .framework-card:hover { transform: none; }
+}
+
     

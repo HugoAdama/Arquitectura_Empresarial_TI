@@ -1,4 +1,30 @@
+      const initializeMotion = () => {
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (reducedMotion || !('IntersectionObserver' in window)) return;
+
+        const revealable = [...document.querySelectorAll<HTMLElement>(
+          '.topic-section > .section-heading, .lesson-card, .learning-expansion, .video-complementario, .case-card, .final-case, .source-section',
+        )];
+        if (revealable.length === 0) return;
+
+        document.documentElement.classList.add('motion-enabled');
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          });
+        }, { threshold: 0.08, rootMargin: '0px 0px -36px 0px' });
+
+        revealable.forEach((element, index) => {
+          element.classList.add('motion-reveal');
+          element.style.setProperty('--motion-delay', `${(index % 4) * 65}ms`);
+          observer.observe(element);
+        });
+      };
+
       const initializeCourse = () => {
+      initializeMotion();
       const searchInput = document.querySelector<HTMLInputElement>('#topic-search');
       const topicFilter = document.querySelector<HTMLSelectElement>('#topic-filter');
       const searchStatus = document.querySelector<HTMLElement>('#search-status');
