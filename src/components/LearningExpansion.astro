@@ -1,0 +1,45 @@
+---
+import type { LearningExpansionContent } from '../data/learning-expansions';
+
+interface Props {
+  content: LearningExpansionContent;
+}
+
+const { content } = Astro.props;
+const headingId = `expansion-${content.topic}`;
+---
+
+<section class="learning-expansion" aria-labelledby={headingId}>
+  <div class="learning-expansion-heading">
+    <div>
+      <p class="section-kicker">Para profundizar · {content.topic.replace('tema-', 'Tema ')}</p>
+      <h3 id={headingId}>{content.title}</h3>
+      <p>{content.intro}</p>
+    </div>
+    <span class="expansion-mark" aria-hidden="true">↗</span>
+  </div>
+
+  <div class="expansion-grid">
+    {content.cards.map((card, index) => (
+      <article
+        id={`insight-${content.topic}-${index + 1}`}
+        class="expansion-card"
+        data-search-entry
+        data-topic={content.topic}
+        data-title={`${content.topic} ${card.title}`}
+      >
+        <div class="expansion-card-top"><span>{String(index + 1).padStart(2, '0')}</span><span class="expansion-label">{card.label}</span></div>
+        <h4>{card.title}</h4>
+        <p>{card.text}</p>
+        <div class="expansion-example"><strong>Ejemplo aplicado</strong><span>{card.example}</span></div>
+      </article>
+    ))}
+  </div>
+
+  <div class="expansion-sources" aria-label="Fuentes de Google Drive">
+    <span>Basado en el material del curso:</span>
+    {content.sources.map((source) => (
+      <a href={source.href} target="_blank" rel="noreferrer">{source.label}<span aria-hidden="true"> ↗</span></a>
+    ))}
+  </div>
+</section>

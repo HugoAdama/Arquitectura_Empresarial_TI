@@ -1,5 +1,7 @@
 ---
 import TopicPagination from './TopicPagination.astro';
+import LearningExpansion from './LearningExpansion.astro';
+import { learningExpansions } from '../data/learning-expansions';
 ---
 <details class="chapter-accordion">
   <summary class="chapter-summary"><span class="chapter-number">02</span><span class="chapter-title"><strong>Tema 2 · Modelos y dominios</strong><small>Negocio, datos, aplicaciones y tecnología</small></span><span class="chapter-action">Abrir tema <span aria-hidden="true">＋</span></span></summary>
@@ -41,6 +43,7 @@ import TopicPagination from './TopicPagination.astro';
             </article>
           </div>
         </section>
+        <LearningExpansion content={learningExpansions['tema-2']} />
         <TopicPagination current={2} previous={{ href: '#idea', label: 'Fundamentos' }} next={{ href: '#tema-3', label: 'Nube e infraestructura' }} />
   </div>
 </details>
@@ -84,6 +87,7 @@ import TopicPagination from './TopicPagination.astro';
             </article>
           </div>
         </section>
+        <LearningExpansion content={learningExpansions['tema-3']} />
         <TopicPagination current={3} previous={{ href: '#tema-2', label: 'Dominios' }} next={{ href: '#tema-4', label: 'Procesos' }} />
   </div>
 </details>
@@ -127,6 +131,7 @@ import TopicPagination from './TopicPagination.astro';
             </article>
           </div>
         </section>
+        <LearningExpansion content={learningExpansions['tema-4']} />
         <TopicPagination current={4} previous={{ href: '#tema-3', label: 'Nube e infraestructura' }} next={{ href: '#tema-5', label: 'Servicios y APIs' }} />
   </div>
 </details>
@@ -171,6 +176,7 @@ import TopicPagination from './TopicPagination.astro';
           </div>
           <div class="numbering-note"><strong>Nota sobre la numeración:</strong> el sílabo ubica APIs en 5.2 y seguridad SOA/microservicios en 5.3; los archivos de la carpeta muestran microservicios como 5.2, APIs como 5.3 y seguridad SOA/microservicios como 5.4. Para tareas y evaluaciones, contrasta con el sílabo.</div>
         </section>
+        <LearningExpansion content={learningExpansions['tema-5']} />
         <TopicPagination current={5} previous={{ href: '#tema-4', label: 'Procesos' }} next={{ href: '#tema-6', label: 'Datos y analítica' }} />
   </div>
 </details>
@@ -214,6 +220,7 @@ import TopicPagination from './TopicPagination.astro';
             </article>
           </div>
         </section>
+        <LearningExpansion content={learningExpansions['tema-6']} />
         <TopicPagination current={6} previous={{ href: '#tema-5', label: 'Servicios y APIs' }} next={{ href: '#tema-7', label: 'Emergentes y gobierno' }} />
   </div>
 </details>
@@ -264,6 +271,7 @@ import TopicPagination from './TopicPagination.astro';
             </div>
           </div>
         </section>
+        <LearningExpansion content={learningExpansions['tema-7']} />
         <TopicPagination current={7} previous={{ href: '#tema-6', label: 'Datos y analítica' }} next={{ href: '#caso-banco', label: 'Caso del banco' }} />
   </div>
 </details>

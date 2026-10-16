@@ -1,3 +1,7 @@
+---
+import LearningExpansion from './LearningExpansion.astro';
+import { learningExpansions } from '../data/learning-expansions';
+---
 <section class="hero" aria-labelledby="page-title">
           <div class="hero-copy">
             <p class="eyebrow"><span class="eyebrow-dot"></span> Arquitectura Empresarial de TI</p>
@@ -11,6 +15,10 @@
               <span>28 subtemas</span>
               <span>Ejemplos de logística</span>
             </div>
+          <div class="hero-actions">
+            <a class="hero-button hero-button-primary" href="#ruta-temas">Explorar temas <span aria-hidden="true">↓</span></a>
+            <a class="hero-button hero-button-secondary" href="#topic-search"><span aria-hidden="true">⌕</span> Buscar un concepto</a>
+          </div>
           </div>
           <img class="hero-art" src={`${import.meta.env.BASE_URL}images/arquitectura-empresarial-hero.png`} alt="" aria-hidden="true" fetchpriority="high" />
         </section>
@@ -52,7 +60,7 @@
           </div>
         </section>
 
-        <details class="chapter-accordion chapter-one">
+        <details class="chapter-accordion chapter-one" id="ruta-temas">
           <summary class="chapter-summary">
             <span class="chapter-number">01</span>
             <span class="chapter-title"><strong>Tema 1 · Fundamentos</strong><small>Conceptos, dominios, marcos y un caso de logística</small></span>
@@ -199,6 +207,8 @@
           </div>
           <div class="comparison-note"><strong>Para diferenciarlos:</strong> Zachman ayuda a preguntar y clasificar; TOGAF ayuda a recorrer un proceso de arquitectura; FEA ayuda a coordinar entidades que conservan autonomía.</div>
         </section>
+
+        <LearningExpansion content={learningExpansions['tema-1']} />
 
         <section class="content-section case-section" id="caso" data-search-entry data-title="Caso logístico y dominios de arquitectura">
           <div class="section-heading">
