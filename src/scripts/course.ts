@@ -54,6 +54,47 @@
         if (currentSectionLabel) currentSectionLabel.textContent = section.label;
       };
 
+      const revealTarget = (target: HTMLElement) => {
+        const chapter = target.closest<HTMLDetailsElement>('.chapter-accordion');
+        if (chapter) {
+          document.querySelectorAll<HTMLDetailsElement>('.chapter-accordion[open]').forEach((openChapter) => {
+            if (openChapter !== chapter) openChapter.open = false;
+          });
+          chapter.open = true;
+        }
+
+        let parent: HTMLElement | null = target;
+        while (parent) {
+          if (parent instanceof HTMLDetailsElement) parent.open = true;
+          parent = parent.parentElement;
+        }
+      };
+
+      const revealCurrentHash = () => {
+        const targetId = decodeURIComponent(window.location.hash.slice(1));
+        const target = targetId ? document.getElementById(targetId) : null;
+        if (target) revealTarget(target);
+      };
+
+      document.querySelectorAll<HTMLDetailsElement>('.chapter-accordion').forEach((chapter) => {
+        chapter.addEventListener('toggle', () => {
+          if (!chapter.open) return;
+          document.querySelectorAll<HTMLDetailsElement>('.chapter-accordion[open]').forEach((openChapter) => {
+            if (openChapter !== chapter) openChapter.open = false;
+          });
+        });
+      });
+
+      document.addEventListener('click', (event) => {
+        if (!(event.target instanceof Element)) return;
+        const link = event.target.closest<HTMLAnchorElement>('a[href^="#"]');
+        if (!link) return;
+        const target = document.getElementById(link.hash.slice(1));
+        if (target) revealTarget(target);
+      });
+      window.addEventListener('hashchange', revealCurrentHash);
+      revealCurrentHash();
+
       if ('IntersectionObserver' in window) {
         const sectionObserver = new IntersectionObserver((entries) => {
           const visibleSections = entries
@@ -141,7 +182,7 @@
         const link = event.target.closest<HTMLAnchorElement>('a[href^="#"]');
         if (!link) return;
         const target = document.getElementById(link.hash.slice(1));
-        if (target instanceof HTMLDetailsElement) target.open = true;
+        if (target) revealTarget(target);
       });
       };
 
