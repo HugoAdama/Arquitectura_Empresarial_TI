@@ -1,0 +1,270 @@
+---
+import TopicPagination from './TopicPagination.astro';
+---
+<section class="content-section topic-section" id="tema-2" aria-labelledby="title-tema-2">
+          <div class="section-heading">
+            <div><p class="section-kicker">Tema 2 · Modelos y dominios</p><h2 id="title-tema-2">Cómo se organiza una empresa desde cuatro perspectivas</h2></div>
+            <span class="section-index">02</span>
+          </div>
+          <p class="section-intro">El tema amplía los dominios del Tema 1 y muestra cómo cada uno aporta a una operación coherente.</p>
+          <div class="lesson-grid">
+            <article class="lesson-card" id="t2-1" data-search-entry data-title="2.1 Arquitectura de negocio, cadena de valor y Canvas">
+              <div class="lesson-top"><span class="lesson-code">2.1</span><span class="lesson-tag">Negocio</span></div>
+              <h3>Arquitectura de negocio</h3>
+              <p>Describe la estrategia, estructura, capacidades y procesos que convierten recursos en valor para clientes y organización.</p>
+              <div class="lesson-example"><strong>En logística</strong><span>Mapear compras → recepción → almacenamiento → preparación → despacho ayuda a localizar demoras y traspasos.</span></div>
+              <p class="lesson-link"><strong>Herramienta relacionada:</strong> la cadena de valor muestra actividades; Business Model Canvas resume cómo funciona el modelo de negocio.</p>
+            </article>
+            <article class="lesson-card" id="t2-2" data-search-entry data-title="2.2 Arquitectura de datos, modelado y gestión de información">
+              <div class="lesson-top"><span class="lesson-code">2.2</span><span class="lesson-tag">Datos</span></div>
+              <h3>Arquitectura de datos</h3>
+              <p>Define qué información existe, cómo se relaciona, dónde se guarda y bajo qué reglas se mantiene disponible, consistente y protegida.</p>
+              <div class="lesson-example"><strong>En logística</strong><span>Un producto necesita un identificador único, unidad de medida, proveedor y saldo por ubicación.</span></div>
+              <p class="lesson-link"><strong>Pregunta útil:</strong> ¿qué registro es la fuente confiable cuando dos sistemas muestran cantidades distintas?</p>
+            </article>
+            <article class="lesson-card" id="t2-3" data-search-entry data-title="2.3 Arquitectura de aplicaciones, integración y APIs">
+              <div class="lesson-top"><span class="lesson-code">2.3</span><span class="lesson-tag">Aplicaciones</span></div>
+              <h3>Arquitectura de aplicaciones</h3>
+              <p>Describe los sistemas que apoyan las funciones del negocio y sus relaciones. La integración permite intercambiar datos y coordinar tareas.</p>
+              <div class="lesson-example"><strong>En logística</strong><span>Compras registra una recepción y el sistema de inventario actualiza existencias sin volver a digitar la misma información.</span></div>
+              <p class="lesson-link"><strong>Conexión:</strong> las APIs ofrecen contratos para que aplicaciones distintas se comuniquen.</p>
+            </article>
+            <article class="lesson-card" id="t2-4" data-search-entry data-title="2.4 Arquitectura tecnológica, infraestructura cloud y ciberseguridad">
+              <div class="lesson-top"><span class="lesson-code">2.4</span><span class="lesson-tag">Tecnología</span></div>
+              <h3>Arquitectura tecnológica</h3>
+              <p>Detalla la plataforma que soporta los sistemas: equipos, software base, redes, servicios cloud y controles de seguridad.</p>
+              <div class="lesson-example"><strong>En logística</strong><span>PCs, lectores, conectividad del almacén y el entorno donde se ejecuta el sistema de inventario.</span></div>
+              <p class="lesson-link"><strong>Decisión:</strong> elegir tecnología según disponibilidad, seguridad, costo y necesidades del proceso.</p>
+            </article>
+          </div>
+        </section>
+        <TopicPagination current={2} previous={{ href: '#idea', label: 'Fundamentos' }} next={{ href: '#tema-3', label: 'Nube e infraestructura' }} />
+
+        <section class="content-section topic-section" id="tema-3" aria-labelledby="title-tema-3">
+          <div class="section-heading">
+            <div><p class="section-kicker">Tema 3 · Infraestructura de TI y Cloud Computing</p><h2 id="title-tema-3">Dónde se ejecutan los sistemas y cómo se protegen</h2></div>
+            <span class="section-index">03</span>
+          </div>
+          <div class="lesson-grid">
+            <article class="lesson-card" id="t3-1" data-search-entry data-title="3.1 Hardware, software e infraestructura de TI">
+              <div class="lesson-top"><span class="lesson-code">3.1</span><span class="lesson-tag">Fundamentos</span></div>
+              <h3>Hardware y software</h3>
+              <p>La infraestructura de TI combina recursos físicos y lógicos que permiten ejecutar aplicaciones, almacenar información y conectar usuarios.</p>
+              <div class="lesson-example"><strong>Ejemplo</strong><span>Servidor o PC, sistema operativo, aplicación de inventario, red y personal que mantiene la operación.</span></div>
+              <p class="lesson-link"><strong>Importa porque:</strong> una falla en cualquier componente puede afectar la continuidad del servicio.</p>
+            </article>
+            <article class="lesson-card" id="t3-2" data-search-entry data-title="3.2 Cloud Computing IaaS PaaS SaaS modelos de servicio">
+              <div class="lesson-top"><span class="lesson-code">3.2</span><span class="lesson-tag">Nube</span></div>
+              <h3>IaaS, PaaS y SaaS</h3>
+              <p>Son modelos de servicio cloud con distintas responsabilidades. IaaS entrega recursos de infraestructura; PaaS, una plataforma administrada; SaaS, una aplicación lista para usar.</p>
+              <div class="lesson-example"><strong>Atajo para recordar</strong><span>De IaaS a SaaS, el proveedor administra una parte cada vez mayor de la plataforma.</span></div>
+              <p class="lesson-link"><strong>Evaluar:</strong> control necesario, habilidades del equipo, costo total, disponibilidad y dependencia del proveedor.</p>
+            </article>
+            <article class="lesson-card" id="t3-3" data-search-entry data-title="3.3 Virtualización hipervisor contenedores">
+              <div class="lesson-top"><span class="lesson-code">3.3</span><span class="lesson-tag">Ejecución</span></div>
+              <h3>Virtualización y contenedores</h3>
+              <p>La virtualización permite crear máquinas virtuales sobre un equipo físico mediante un hipervisor. Los contenedores empaquetan una aplicación y sus dependencias en un entorno aislado.</p>
+              <div class="lesson-example"><strong>Idea clave</strong><span>Ambos ayudan a aprovechar recursos y repetir entornos; resuelven problemas relacionados, pero no son lo mismo.</span></div>
+              <p class="lesson-link"><strong>Beneficio posible:</strong> despliegues más consistentes y mejor uso de infraestructura, con complejidad operativa adicional.</p>
+            </article>
+            <article class="lesson-card" id="t3-4" data-search-entry data-title="3.4 Redes cloud amenazas vulnerabilidades controles ciberseguridad">
+              <div class="lesson-top"><span class="lesson-code">3.4</span><span class="lesson-tag">Seguridad</span></div>
+              <h3>Redes y ciberseguridad en la nube</h3>
+              <p>Las redes conectan usuarios y servicios. La seguridad analiza amenazas y vulnerabilidades y aplica controles para proteger confidencialidad, integridad y disponibilidad.</p>
+              <div class="lesson-example"><strong>Controles comunes</strong><span>Acceso con privilegio mínimo, cifrado, segmentación, copias de respaldo y monitoreo.</span></div>
+              <p class="lesson-link"><strong>No olvidar:</strong> trasladar un sistema a la nube no elimina la responsabilidad de protegerlo.</p>
+            </article>
+          </div>
+        </section>
+        <TopicPagination current={3} previous={{ href: '#tema-2', label: 'Dominios' }} next={{ href: '#tema-4', label: 'Procesos' }} />
+
+        <section class="content-section topic-section" id="tema-4" aria-labelledby="title-tema-4">
+          <div class="section-heading">
+            <div><p class="section-kicker">Tema 4 · Procesos, BPMN y automatización</p><h2 id="title-tema-4">Entender el trabajo antes de automatizarlo</h2></div>
+            <span class="section-index">04</span>
+          </div>
+          <div class="lesson-grid">
+            <article class="lesson-card" id="t4-1" data-search-entry data-title="4.1 BPM gestión de procesos metodologías mejora continua">
+              <div class="lesson-top"><span class="lesson-code">4.1</span><span class="lesson-tag">BPM</span></div>
+              <h3>Gestión de procesos de negocio</h3>
+              <p>BPM es una disciplina para identificar, modelar, analizar, mejorar y monitorear procesos de forma continua, alineándolos con objetivos organizacionales.</p>
+              <div class="lesson-example"><strong>En almacén</strong><span>Medir cuánto demora la recepción y cuántas diferencias de inventario se detectan antes de rediseñar el flujo.</span></div>
+              <p class="lesson-link"><strong>Orden recomendado:</strong> entender el proceso actual, encontrar causas y definir la mejora.</p>
+            </article>
+            <article class="lesson-card" id="t4-2" data-search-entry data-title="4.2 BPMN 2.0 eventos tareas compuertas modelado procesos">
+              <div class="lesson-top"><span class="lesson-code">4.2</span><span class="lesson-tag">Modelado</span></div>
+              <h3>BPMN 2.0</h3>
+              <p>Notación visual estándar para representar procesos. Eventos marcan inicio, espera o cierre; tareas representan trabajo; compuertas muestran decisiones o rutas.</p>
+              <div class="lesson-example"><strong>En un diagrama</strong><span>Una compuerta puede separar “mercadería conforme” de “reportar diferencia al proveedor”.</span></div>
+              <p class="lesson-link"><strong>También ayuda:</strong> carriles pueden mostrar quién realiza cada actividad y dónde ocurre un traspaso.</p>
+            </article>
+            <article class="lesson-card" id="t4-3" data-search-entry data-title="4.3 BPMS automatización de procesos de negocio">
+              <div class="lesson-top"><span class="lesson-code">4.3</span><span class="lesson-tag">Automatización</span></div>
+              <h3>BPMS</h3>
+              <p>Una plataforma BPMS permite modelar y ejecutar flujos de trabajo, asignar tareas, aplicar reglas y observar el desempeño del proceso.</p>
+              <div class="lesson-example"><strong>Ejemplo</strong><span>Al registrar una recepción, enviar una tarea de aprobación cuando la cantidad no coincide con la orden.</span></div>
+              <p class="lesson-link"><strong>Precaución:</strong> automatizar un flujo confuso puede acelerar errores; primero analiza el proceso.</p>
+            </article>
+            <article class="lesson-card" id="t4-4" data-search-entry data-title="4.4 Integración BPM ERP CRM estrategia">
+              <div class="lesson-top"><span class="lesson-code">4.4</span><span class="lesson-tag">Integración</span></div>
+              <h3>Procesos, ERP y CRM</h3>
+              <p>Un ERP integra procesos internos como compras e inventario; un CRM organiza información e interacciones con clientes. Su valor depende de cómo apoyan la estrategia.</p>
+              <div class="lesson-example"><strong>En logística</strong><span>Una venta puede iniciar preparación, rebajar stock y actualizar al cliente sobre la entrega.</span></div>
+              <p class="lesson-link"><strong>Conexión:</strong> alinear proceso, datos y sistemas evita registros aislados entre áreas.</p>
+            </article>
+          </div>
+        </section>
+        <TopicPagination current={4} previous={{ href: '#tema-3', label: 'Nube e infraestructura' }} next={{ href: '#tema-5', label: 'Servicios y APIs' }} />
+
+        <section class="content-section topic-section" id="tema-5" aria-labelledby="title-tema-5">
+          <div class="section-heading">
+            <div><p class="section-kicker">Tema 5 · SOA, microservicios y APIs</p><h2 id="title-tema-5">Servicios conectados con límites y responsabilidades claras</h2></div>
+            <span class="section-index">05</span>
+          </div>
+          <div class="lesson-grid">
+            <article class="lesson-card" id="t5-1" data-search-entry data-title="5.1 Planificación arquitectura TI Gantt SOA">
+              <div class="lesson-top"><span class="lesson-code">5.1</span><span class="lesson-tag">Planificación</span></div>
+              <h3>Planificación de arquitectura de TI</h3>
+              <p>Convierte necesidades del negocio en un plan de evolución con alcance, prioridades, responsables, dependencias e hitos. El Gantt puede ayudar a visualizar tiempos y secuencia.</p>
+              <div class="lesson-example"><strong>En almacén</strong><span>Primero corregir datos de productos; luego integrar compras e inventario; después evaluar automatizaciones.</span></div>
+              <p class="lesson-link"><strong>En el material:</strong> también aparece una introducción a SOA como organización de capacidades en servicios reutilizables.</p>
+            </article>
+            <article class="lesson-card" id="t5-2" data-search-entry data-title="5.2 Microservicios arquitectura patrones API Gateway">
+              <div class="lesson-top"><span class="lesson-code">5.2</span><span class="lesson-tag">Arquitectura</span></div>
+              <h3>Microservicios</h3>
+              <p>Divide una aplicación en servicios pequeños con responsabilidades delimitadas que pueden desarrollarse y desplegarse de manera independiente.</p>
+              <div class="lesson-example"><strong>Ejemplo conceptual</strong><span>Servicios de catálogo, pedidos e inventario podrían tener límites distintos y comunicarse mediante APIs.</span></div>
+              <p class="lesson-link"><strong>Trade-off:</strong> puede aumentar autonomía, pero también agrega monitoreo, redes, seguridad y consistencia distribuida.</p>
+            </article>
+            <article class="lesson-card" id="t5-3" data-search-entry data-title="5.3 APIs gestión documentación ciclo de vida">
+              <div class="lesson-top"><span class="lesson-code">5.3</span><span class="lesson-tag">Integración</span></div>
+              <h3>APIs y su gestión</h3>
+              <p>Una API define una forma acordada para que un sistema solicite datos o funciones de otro sin depender de sus detalles internos.</p>
+              <div class="lesson-example"><strong>En logística</strong><span>Una tienda consulta disponibilidad del inventario para mostrar stock antes de confirmar un pedido.</span></div>
+              <p class="lesson-link"><strong>Gestionar APIs implica:</strong> diseñar, documentar, controlar acceso, versionar y monitorear su uso.</p>
+            </article>
+            <article class="lesson-card" id="t5-4" data-search-entry data-title="5.4 Seguridad SOA microservicios OAuth2 JWT cifrado">
+              <div class="lesson-top"><span class="lesson-code">5.4</span><span class="lesson-tag">Seguridad</span></div>
+              <h3>Seguridad en SOA y microservicios</h3>
+              <p>Más servicios y conexiones significan más puntos que proteger. Deben controlarse identidad, permisos, transporte y exposición de datos.</p>
+              <div class="lesson-example"><strong>Buenas prácticas estudiadas</strong><span>HTTPS, autorización con OAuth 2.0/JWT cuando corresponde, privilegio mínimo y monitoreo.</span></div>
+              <p class="lesson-link"><strong>La clave:</strong> aplicar controles coherentes en cada servicio y en sus comunicaciones.</p>
+            </article>
+          </div>
+          <div class="numbering-note"><strong>Nota sobre la numeración:</strong> el sílabo ubica APIs en 5.2 y seguridad SOA/microservicios en 5.3; los archivos de la carpeta muestran microservicios como 5.2, APIs como 5.3 y seguridad SOA/microservicios como 5.4. Para tareas y evaluaciones, contrasta con el sílabo.</div>
+        </section>
+        <TopicPagination current={5} previous={{ href: '#tema-4', label: 'Procesos' }} next={{ href: '#tema-6', label: 'Datos y analítica' }} />
+
+        <section class="content-section topic-section" id="tema-6" aria-labelledby="title-tema-6">
+          <div class="section-heading">
+            <div><p class="section-kicker">Tema 6 · Arquitectura de datos y Big Data</p><h2 id="title-tema-6">De los registros operativos a decisiones informadas</h2></div>
+            <span class="section-index">06</span>
+          </div>
+          <div class="lesson-grid">
+            <article class="lesson-card" id="t6-1" data-search-entry data-title="6.1 Modelo relacional NoSQL Data Warehouse">
+              <div class="lesson-top"><span class="lesson-code">6.1</span><span class="lesson-tag">Modelos</span></div>
+              <h3>Relacional, NoSQL y Data Warehouse</h3>
+              <p>El modelo relacional organiza datos en tablas relacionadas; NoSQL agrupa modelos no relacionales para necesidades como documentos, grafos o columnas; un Data Warehouse integra datos históricos para análisis.</p>
+              <div class="lesson-example"><strong>En logística</strong><span>Transacciones de stock suelen requerir registros consistentes; tendencias de varios años pueden analizarse en un almacén de datos.</span></div>
+              <p class="lesson-link"><strong>Elección:</strong> depende de estructura, consultas, consistencia y propósito del sistema.</p>
+            </article>
+            <article class="lesson-card" id="t6-2" data-search-entry data-title="6.2 Big Data volumen velocidad variedad">
+              <div class="lesson-top"><span class="lesson-code">6.2</span><span class="lesson-tag">Escala</span></div>
+              <h3>Big Data y las 3 V</h3>
+              <p>Big Data aborda datos cuya escala o complejidad requiere enfoques de almacenamiento y procesamiento especializados. El curso destaca volumen, velocidad y variedad.</p>
+              <div class="lesson-example"><strong>En logística</strong><span>Muchas lecturas de sensores, movimientos y pedidos en formatos distintos pueden aumentar volumen, velocidad y variedad.</span></div>
+              <p class="lesson-link"><strong>Recuerda:</strong> tener muchos datos no garantiza que sean correctos ni que produzcan una buena decisión.</p>
+            </article>
+            <article class="lesson-card" id="t6-3" data-search-entry data-title="6.3 Hadoop Spark computación distribuida paralela">
+              <div class="lesson-top"><span class="lesson-code">6.3</span><span class="lesson-tag">Procesamiento</span></div>
+              <h3>Hadoop y Spark</h3>
+              <p>Son tecnologías vinculadas al procesamiento distribuido. La idea general es repartir almacenamiento o trabajo entre varios nodos para tratar grandes conjuntos de datos.</p>
+              <div class="lesson-example"><strong>Analogía</strong><span>En vez de que una sola persona cuente todo el almacén, varios equipos procesan partes y después reúnen los resultados.</span></div>
+              <p class="lesson-link"><strong>En el curso:</strong> distinguir computación distribuida de paralela y reconocer el propósito de estas herramientas.</p>
+            </article>
+            <article class="lesson-card" id="t6-4" data-search-entry data-title="6.4 Analítica de datos BI descriptiva diagnóstica predictiva prescriptiva">
+              <div class="lesson-top"><span class="lesson-code">6.4</span><span class="lesson-tag">Decisiones</span></div>
+              <h3>Analítica y Business Intelligence</h3>
+              <p>BI reúne datos, reportes y visualizaciones para apoyar decisiones. La analítica puede describir qué ocurrió, diagnosticar por qué, predecir qué podría ocurrir y orientar qué acción conviene evaluar.</p>
+              <div class="lesson-example"><strong>En inventario</strong><span>Reporte de ventas → causa de quiebre → pronóstico de demanda → evaluar una reposición.</span></div>
+              <p class="lesson-link"><strong>Flujo:</strong> los indicadores sirven cuando responden preguntas concretas del negocio.</p>
+            </article>
+          </div>
+        </section>
+        <TopicPagination current={6} previous={{ href: '#tema-5', label: 'Servicios y APIs' }} next={{ href: '#tema-7', label: 'Emergentes y gobierno' }} />
+
+        <section class="content-section topic-section" id="tema-7" aria-labelledby="title-tema-7">
+          <div class="section-heading">
+            <div><p class="section-kicker">Tema 7 · Tecnologías emergentes y gobierno</p><h2 id="title-tema-7">Innovar con control, responsabilidad y propósito</h2></div>
+            <span class="section-index">07</span>
+          </div>
+          <div class="lesson-grid">
+            <article class="lesson-card" id="t7-1" data-search-entry data-title="7.1 Inteligencia Artificial IA Machine Learning ML arquitectura">
+              <div class="lesson-top"><span class="lesson-code">7.1</span><span class="lesson-tag">IA y ML</span></div>
+              <h3>Inteligencia artificial y aprendizaje automático</h3>
+              <p>IA es el campo amplio de sistemas que realizan tareas asociadas a capacidades humanas. ML es un enfoque que aprende patrones a partir de datos.</p>
+              <div class="lesson-example"><strong>En logística</strong><span>Un modelo puede estimar demanda; el personal debe revisar datos, errores y consecuencias antes de usar el resultado.</span></div>
+              <p class="lesson-link"><strong>Preguntas de arquitectura:</strong> ¿qué datos usa?, ¿quién responde por la decisión?, ¿cómo se detectan errores o sesgos?</p>
+            </article>
+            <article class="lesson-card" id="t7-2" data-search-entry data-title="7.2 Internet de las Cosas IoT Blockchain trazabilidad">
+              <div class="lesson-top"><span class="lesson-code">7.2</span><span class="lesson-tag">IoT y Blockchain</span></div>
+              <h3>IoT y Blockchain</h3>
+              <p>IoT conecta objetos y sensores para capturar e intercambiar datos. Blockchain mantiene registros compartidos cuyo historial es difícil de alterar bajo las reglas de la red.</p>
+              <div class="lesson-example"><strong>Usos posibles</strong><span>Sensores para temperatura y ubicación; registro compartido de eventos de trazabilidad entre participantes.</span></div>
+              <p class="lesson-link"><strong>Evaluar antes de adoptar:</strong> costo, privacidad, integración, mantenimiento y si el problema realmente necesita esa tecnología.</p>
+            </article>
+            <article class="lesson-card" id="t7-3" data-search-entry data-title="7.3 Gobierno de arquitectura de TI principios roles decisiones">
+              <div class="lesson-top"><span class="lesson-code">7.3</span><span class="lesson-tag">Gobierno</span></div>
+              <h3>Gobierno de arquitectura de TI</h3>
+              <p>Define principios, roles, procesos y mecanismos de supervisión para que las decisiones de TI sigan alineadas con los objetivos y controles de la organización.</p>
+              <div class="lesson-example"><strong>En una empresa</strong><span>Establecer quién aprueba integraciones, qué estándares deben cumplir y cómo se revisan riesgos y resultados.</span></div>
+              <p class="lesson-link"><strong>Resultado buscado:</strong> decisiones claras, responsabilidades visibles y cambios sostenibles.</p>
+            </article>
+            <article class="lesson-card" id="t7-4" data-search-entry data-title="7.4 Ética tecnología privacidad protección datos sesgo transparencia sostenibilidad">
+              <div class="lesson-top"><span class="lesson-code">7.4</span><span class="lesson-tag">Ética</span></div>
+              <h3>Ética y sostenibilidad en TI</h3>
+              <p>Las decisiones tecnológicas deben cuidar derechos y bienestar, considerando privacidad, protección de datos, sesgos, transparencia, seguridad y efectos ambientales y económicos.</p>
+              <div class="lesson-example"><strong>Antes de automatizar</strong><span>Comprobar si los datos son pertinentes, quién puede verlos y cómo una decisión errónea afectaría a las personas.</span></div>
+              <p class="lesson-link"><strong>Responsabilidad profesional:</strong> explicar límites, reducir riesgos y monitorear impactos después del despliegue.</p>
+            </article>
+          </div>
+          <div class="final-case">
+            <div><p class="section-kicker">Conexión con la evaluación final</p><h3>“Cuando la Nube Decide el Futuro del Banco”</h3></div>
+            <div class="final-case-body">
+              <p>El caso plantea migrar a la nube y microservicios con rapidez, aunque el 68 % de los procesos críticos depende de sistemas legacy con integraciones no documentadas y existen 2,3 millones de clientes digitales activos.</p>
+              <p><strong>Una decisión responsable debe:</strong> mapear los cuatro dominios, documentar aplicaciones y datos, identificar riesgos y obligaciones, proteger la información y asegurar continuidad antes de avanzar por etapas.</p>
+            </div>
+          </div>
+        </section>
+        <TopicPagination current={7} previous={{ href: '#tema-6', label: 'Datos y analítica' }} next={{ href: '#caso-banco', label: 'Caso del banco' }} />
+
+        <section class="content-section case-section" id="caso-banco" data-search-entry data-title="Evaluación final migración cloud banco Interbank microservicios riesgos ética sostenibilidad">
+          <div class="section-heading">
+            <div><p class="section-kicker">Caso de evaluación final · UAIN1017V</p><h2>Cuando la nube decide el futuro del banco</h2></div>
+            <span class="section-index">EF</span>
+          </div>
+          <div class="case-card">
+            <div class="case-copy">
+              <span class="case-label">Hechos del caso en Drive</span>
+              <h3>La propuesta busca migrar el core bancario a microservicios en nube pública antes del cierre del año fiscal.</h3>
+              <p>El material del curso identifica una condición crítica: el 68 % de los procesos críticos depende de sistemas legacy con integraciones sin estándar documentado, con continuidad para más de 2,3 millones de clientes digitales en juego.</p>
+              <h4>Dictamen preliminar</h4>
+              <p>No conviene aprobar una migración integral acelerada con el mapa actual. La recomendación es condicionar la inversión a una línea base verificable y avanzar por dominios y oleadas, con criterios de salida, reversa y continuidad.</p>
+            </div>
+            <div class="case-flow" aria-label="Preparación de la decisión en tres semanas">
+              <div class="flow-step"><span>01</span><div><strong>Semana 1 · Conocer</strong><small>Mapear procesos, datos, aplicaciones, dependencias y responsables.</small></div></div>
+              <div class="flow-connector" aria-hidden="true"></div>
+              <div class="flow-step"><span>02</span><div><strong>Semana 2 · Evaluar</strong><small>Priorizar riesgos, seguridad, regulación, costos, impacto y alternativas.</small></div></div>
+              <div class="flow-connector" aria-hidden="true"></div>
+              <div class="flow-step"><span>03</span><div><strong>Semana 3 · Decidir</strong><small>Presentar arquitectura objetivo, oleadas, controles y métricas al comité.</small></div></div>
+            </div>
+          </div>
+          <div class="lesson-grid">
+            <article class="lesson-card"><div class="lesson-top"><span class="lesson-code">SOCIAL</span><span class="lesson-tag">Clientes</span></div><h3>Continuidad y confianza</h3><p>Una interrupción puede impedir pagos o consultas. Define objetivos de recuperación, pruebas de restauración, comunicación al cliente y operación degradada antes de cada corte.</p></article>
+            <article class="lesson-card"><div class="lesson-top"><span class="lesson-code">ECONÓMICO</span><span class="lesson-tag">Organización</span></div><h3>Costo total y dependencia</h3><p>Compara infraestructura, migración, operación paralela, observabilidad, seguridad, transferencia de datos y salida del proveedor; no uses solo el ahorro de servidores como caso de negocio.</p></article>
+            <article class="lesson-card"><div class="lesson-top"><span class="lesson-code">AMBIENTAL</span><span class="lesson-tag">Sostenibilidad</span></div><h3>Uso responsable de recursos</h3><p>Incluye consumo y eficiencia energética en la evaluación; mide carga real y dimensiona servicios para evitar capacidad ociosa y replicación de datos innecesaria.</p></article>
+            <article class="lesson-card"><div class="lesson-top"><span class="lesson-code">CONTROL</span><span class="lesson-tag">Gobierno</span></div><h3>Condiciones antes de migrar</h3><p>Inventario y clasificación de datos, identidad con privilegio mínimo, cifrado, registros auditables, pruebas de seguridad, responsables de riesgo y plan probado de reversa.</p></article>
+          </div>
+          <div class="principle-banner"><span class="principle-icon" aria-hidden="true">✓</span><p><strong>Puerta de decisión:</strong> financiar un piloto acotado solo si hay dueño de negocio, dependencias conocidas, controles aprobados, indicadores de servicio y una reversa ensayada. Escalar después de medir resultados.</p></div>
+          <p class="section-note">Las cifras y condiciones anteriores provienen del caso de evaluación final del curso; las recomendaciones son una síntesis de análisis para estudio, no una conclusión sobre la situación real de una entidad.</p>
+        </section>

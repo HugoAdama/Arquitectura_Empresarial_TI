@@ -1,0 +1,24 @@
+---
+interface Props {
+  current: number;
+  previous: { href: string; label: string };
+  next: { href: string; label: string };
+}
+
+const { current, previous, next } = Astro.props;
+const progress = `${(current / 7) * 100}%`;
+---
+<nav class="topic-pagination" aria-label={`Navegación del tema ${current}`}>
+  <a class="pager-link pager-previous" href={previous.href}>
+    <span class="pager-direction">← Anterior</span>
+    <strong>{previous.label}</strong>
+  </a>
+  <div class="pager-position" aria-label={`Tema ${current} de 7`}>
+    <span>Tema <strong>{current}</strong> de 7</span>
+    <span class="pager-track" aria-hidden="true"><span style={`width:${progress}`}></span></span>
+  </div>
+  <a class="pager-link pager-next" href={next.href}>
+    <span class="pager-direction">Siguiente →</span>
+    <strong>{next.label}</strong>
+  </a>
+</nav>

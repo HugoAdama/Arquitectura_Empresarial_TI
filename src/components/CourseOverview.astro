@@ -1,0 +1,228 @@
+<section class="hero" aria-labelledby="page-title">
+          <div class="hero-copy">
+            <p class="eyebrow"><span class="eyebrow-dot"></span> Arquitectura Empresarial de TI</p>
+            <h1 id="page-title">Arquitectura Empresarial de TI <span>Guía de consulta · Temas 1 al 7</span></h1>
+            <p class="hero-lede">
+              Una organización funciona mejor cuando su estrategia, sus procesos, su información,
+              las personas y la tecnología avanzan conectados.
+            </p>
+            <div class="hero-tags" aria-label="Contenido de esta guía">
+              <span>7 temas</span>
+              <span>28 subtemas</span>
+              <span>Ejemplos de logística</span>
+            </div>
+          </div>
+          <img class="hero-art" src={`${import.meta.env.BASE_URL}images/arquitectura-empresarial-hero.png`} alt="" aria-hidden="true" fetchpriority="high" />
+        </section>
+
+        <section class="quick-strip" aria-label="Resumen del curso">
+          <article><span class="quick-number">01</span><span>Entender la organización</span></article>
+          <article><span class="quick-number">02</span><span>Relacionar procesos y sistemas</span></article>
+          <article><span class="quick-number">03</span><span>Elegir cambios con propósito</span></article>
+        </section>
+
+        <section class="search-panel" aria-labelledby="search-title">
+          <div class="search-copy">
+            <p class="section-kicker">Consulta rápida</p>
+            <h2 id="search-title">¿Qué concepto necesitas encontrar?</h2>
+            <p>Busca por término o limita los resultados a un tema, como “BPMN”, “IaaS” o “ética”.</p>
+          </div>
+          <div class="search-control">
+            <div class="search-options">
+              <div>
+                <label for="topic-search">Buscar concepto</label>
+                <input id="topic-search" type="search" placeholder="Ej.: BPMN, IaaS, inventario…" autocomplete="off" aria-describedby="search-status" />
+              </div>
+              <div>
+                <label for="topic-filter">Limitar a un tema</label>
+                <select id="topic-filter" aria-describedby="search-status">
+                  <option value="todos">Todos los temas</option>
+                  <option value="tema-1">Tema 1 · Fundamentos</option>
+                  <option value="tema-2">Tema 2 · Dominios</option>
+                  <option value="tema-3">Tema 3 · Nube e infraestructura</option>
+                  <option value="tema-4">Tema 4 · Procesos</option>
+                  <option value="tema-5">Tema 5 · Servicios y APIs</option>
+                  <option value="tema-6">Tema 6 · Datos y analítica</option>
+                  <option value="tema-7">Tema 7 · Emergentes y gobierno</option>
+                </select>
+              </div>
+            </div>
+            <p id="search-status" class="search-status" aria-live="polite">Empieza a escribir para ver secciones relacionadas.</p>
+            <ul id="search-results" class="search-results" aria-label="Resultados de búsqueda"></ul>
+          </div>
+        </section>
+
+        <section class="content-section" id="idea" data-search-entry data-title="1.1 Definición y alcance de arquitectura empresarial">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">01.1 · Definición y alcance</p>
+              <h2>La arquitectura empresarial es un mapa para tomar decisiones</h2>
+            </div>
+            <span class="section-index">01</span>
+          </div>
+          <div class="two-column">
+            <div class="prose-card">
+              <p>
+                La <strong>Arquitectura Empresarial (AE)</strong> es una forma estructurada de
+                describir cómo se relacionan la estrategia, los procesos, la información, las
+                personas y la tecnología para alcanzar los objetivos de una organización.
+              </p>
+              <p>
+                Sirve para entender el estado actual, reconocer problemas y orientar cambios. No
+                consiste solo en elegir software o equipos: también considera quién trabaja, qué
+                información necesita y cómo se realiza el trabajo.
+              </p>
+            </div>
+            <aside class="callout callout-blue">
+              <span class="callout-label">En una frase</span>
+              <p>La AE conecta <strong>lo que el negocio quiere lograr</strong> con <strong>la forma de operar y la tecnología que lo hace posible</strong>.</p>
+            </aside>
+          </div>
+          <div class="concept-line" aria-label="Relación entre los componentes">
+            <span>Objetivos</span><span class="line-arrow" aria-hidden="true">→</span>
+            <span>Procesos</span><span class="line-arrow" aria-hidden="true">→</span>
+            <span>Información y sistemas</span><span class="line-arrow" aria-hidden="true">→</span>
+            <span>Resultados</span>
+          </div>
+        </section>
+
+        <section class="content-section" id="dominios">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">La visión se divide en cuatro dominios</p>
+              <h2>¿Qué piezas describe una arquitectura?</h2>
+            </div>
+            <span class="section-index">02</span>
+          </div>
+          <div class="domain-grid">
+            <article class="domain-card domain-business">
+              <span class="domain-number">01</span><span class="domain-icon" aria-hidden="true">◎</span>
+              <h3>Negocio</h3>
+              <p>Objetivos, estructura, responsabilidades y procesos que generan valor.</p>
+              <p class="example"><strong>En almacén:</strong> recibir, revisar, guardar y despachar mercadería.</p>
+            </article>
+            <article class="domain-card domain-data">
+              <span class="domain-number">02</span><span class="domain-icon" aria-hidden="true">▤</span>
+              <h3>Datos</h3>
+              <p>Información que se necesita, cómo se organiza, dónde se guarda y quién la usa.</p>
+              <p class="example"><strong>En almacén:</strong> SKU, descripción, proveedor, lote y cantidad.</p>
+            </article>
+            <article class="domain-card domain-apps">
+              <span class="domain-number">03</span><span class="domain-icon" aria-hidden="true">▣</span>
+              <h3>Aplicaciones</h3>
+              <p>Sistemas que apoyan el trabajo y la manera en que intercambian información.</p>
+              <p class="example"><strong>En almacén:</strong> compras, inventario, ventas y facturación.</p>
+            </article>
+            <article class="domain-card domain-tech">
+              <span class="domain-number">04</span><span class="domain-icon" aria-hidden="true">⌘</span>
+              <h3>Tecnología</h3>
+              <p>Hardware, software base, redes y servicios que permiten operar las aplicaciones.</p>
+              <p class="example"><strong>En almacén:</strong> PC, lector de códigos, red y nube o servidor.</p>
+            </article>
+          </div>
+          <p class="section-note"><strong>Ojo:</strong> los dominios se relacionan. Un cambio en el proceso puede requerir datos nuevos, ajustes en el sistema y cambios en la infraestructura.</p>
+        </section>
+
+        <section class="content-section" id="necesidad" data-search-entry data-title="1.2 Necesidad y beneficios de arquitectura empresarial">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">01.2 · Necesidad y beneficios</p>
+              <h2>¿Por qué una organización necesita esta visión?</h2>
+            </div>
+            <span class="section-index">03</span>
+          </div>
+          <div class="benefit-layout">
+            <div class="benefit-intro">
+              <p>
+                A medida que una organización crece, también crecen sus sistemas, áreas y
+                dependencias. Sin una visión común, cada área puede resolver su problema por
+                separado y crear duplicidades o desconexiones.
+              </p>
+              <div class="quote-card">
+                <span aria-hidden="true">“</span>
+                <p>La tecnología aporta valor cuando responde a una necesidad real del negocio.</p>
+              </div>
+            </div>
+            <div class="benefit-list">
+              <article><span class="check">✓</span><div><h3>Alinea negocio y tecnología</h3><p>Las decisiones técnicas se relacionan con objetivos organizacionales.</p></div></article>
+              <article><span class="check">✓</span><div><h3>Reduce silos y duplicidades</h3><p>Las áreas comparten una visión de procesos, información y sistemas.</p></div></article>
+              <article><span class="check">✓</span><div><h3>Ordena el cambio</h3><p>Ayuda a evaluar impactos y planificar mejoras por etapas.</p></div></article>
+              <article><span class="check">✓</span><div><h3>Mejora la comunicación</h3><p>Facilita el diálogo entre personas de negocio y equipos técnicos.</p></div></article>
+              <article><span class="check">✓</span><div><h3>Optimiza recursos</h3><p>Permite detectar soluciones repetidas y oportunidades de integración.</p></div></article>
+            </div>
+          </div>
+          <div class="principle-banner">
+            <span class="principle-icon" aria-hidden="true">✳</span>
+            <p>Los beneficios no aparecen automáticamente: hacen falta objetivos claros, colaboración entre áreas y compromiso organizacional.</p>
+          </div>
+        </section>
+
+        <section class="content-section" id="marcos" data-search-entry data-title="1.3 Zachman y TOGAF; 1.4 FEA">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">01.3 y 01.4 · Marcos de referencia</p>
+              <h2>Tres maneras de ordenar la arquitectura</h2>
+            </div>
+            <span class="section-index">04</span>
+          </div>
+          <p class="section-intro">Un marco de referencia ayuda a organizar el análisis. Zachman estructura preguntas y perspectivas; TOGAF guía el desarrollo y la gestión; FEA facilita estándares comunes entre entidades federadas.</p>
+          <div class="framework-grid">
+            <article class="framework-card zachman">
+              <div class="framework-top"><span class="framework-badge">Matriz</span><span aria-hidden="true">▦</span></div>
+              <h3>Zachman</h3>
+              <p>Organiza la arquitectura en una matriz de seis preguntas y seis perspectivas, desde la visión inicial hasta la operación.</p>
+              <div class="question-pills"><span>¿Qué?</span><span>¿Cómo?</span><span>¿Dónde?</span><span>¿Quién?</span><span>¿Cuándo?</span><span>¿Por qué?</span></div>
+              <p class="framework-use"><strong>Útil para:</strong> revisar que el análisis considere distintas dimensiones y niveles de detalle.</p>
+            </article>
+            <article class="framework-card togaf">
+              <div class="framework-top"><span class="framework-badge">Método ADM</span><span aria-hidden="true">⟳</span></div>
+              <h3>TOGAF</h3>
+              <p>Marco para desarrollar y gestionar arquitecturas. Su método ADM propone un ciclo iterativo de trabajo y revisión.</p>
+              <div class="cycle-tags"><span>Visión</span><span>Diseño</span><span>Migración</span><span>Gobernanza</span></div>
+              <p class="framework-use"><strong>Útil para:</strong> estructurar una transformación y revisar que siga alineada con el negocio.</p>
+            </article>
+            <article class="framework-card fea">
+              <div class="framework-top"><span class="framework-badge">Entidades federadas</span><span aria-hidden="true">⌘</span></div>
+              <h3>FEA</h3>
+              <p>Marco para armonizar arquitecturas locales de entidades autónomas mediante estándares y prácticas comunes.</p>
+              <div class="cycle-tags"><span>Estándares</span><span>Interoperabilidad</span><span>Recursos compartidos</span></div>
+              <p class="framework-use"><strong>Útil para:</strong> coordinar ministerios, agencias o unidades que necesitan colaborar.</p>
+            </article>
+          </div>
+          <div class="comparison-note"><strong>Para diferenciarlos:</strong> Zachman ayuda a preguntar y clasificar; TOGAF ayuda a recorrer un proceso de arquitectura; FEA ayuda a coordinar entidades que conservan autonomía.</div>
+        </section>
+
+        <section class="content-section case-section" id="caso" data-search-entry data-title="Caso logístico y dominios de arquitectura">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">Aplicación · Ejemplo de logística</p>
+              <h2>De los problemas diarios a una visión conectada</h2>
+            </div>
+            <span class="section-index">05</span>
+          </div>
+          <div class="case-card">
+            <div class="case-copy">
+              <span class="case-label">Escenario de estudio</span>
+              <h3>La información de inventario, ventas y atención al cliente está dispersa.</h3>
+              <p>Cuando logística y atención al cliente no comparten datos, cuesta responder dónde está un pedido o por qué el stock no coincide.</p>
+              <h4>Preguntas para analizar antes de comprar otra herramienta</h4>
+              <ul class="question-list">
+                <li>¿Qué resultado necesita mejorar la empresa?</li>
+                <li>¿En qué paso del proceso aparece el problema?</li>
+                <li>¿Qué dato falta o se registra más de una vez?</li>
+                <li>¿Qué aplicaciones deben intercambiar información?</li>
+                <li>¿Qué personas deben participar y aprobar cambios?</li>
+              </ul>
+            </div>
+            <div class="case-flow" aria-label="Relación de dominios en el caso">
+              <div class="flow-step"><span>01</span><div><strong>Negocio</strong><small>Mejorar exactitud y respuesta al cliente</small></div></div>
+              <div class="flow-connector" aria-hidden="true"></div>
+              <div class="flow-step"><span>02</span><div><strong>Proceso</strong><small>Recibir → revisar → registrar → despachar</small></div></div>
+              <div class="flow-connector" aria-hidden="true"></div>
+              <div class="flow-step"><span>03</span><div><strong>Datos y aplicaciones</strong><small>Stock confiable entre compras, inventario y ventas</small></div></div>
+              <div class="flow-connector" aria-hidden="true"></div>
+              <div class="flow-step"><span>04</span><div><strong>Tecnología</strong><small>Equipos, red e integración adecuados</small></div></div>
+            </div>
+          </div>
+          <p class="case-caveat">El material del curso presenta resultados numéricos en un caso ilustrativo de retail. Tómalos como datos de ese caso, no como una promesa de resultados para cualquier empresa.</p>
+        </section>

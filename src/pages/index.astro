@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import Sidebar from '../components/Sidebar.astro';
+import CourseOverview from '../components/CourseOverview.astro';
+import TopicCatalog from '../components/TopicCatalog.astro';
+import StudyResources from '../components/StudyResources.astro';
+---
+<BaseLayout><SiteHeader /><div class="reading-progress" role="progressbar" aria-label="Progreso de lectura" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="reading-progress-bar"></span></div><div class="page-shell"><Sidebar /><main>
+      <CourseOverview />
+      <TopicCatalog />
+      <StudyResources />
+    </main></div></BaseLayout>
