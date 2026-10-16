@@ -1,5 +1,6 @@
 ---
 import type { LearningExpansionContent } from '../data/learning-expansions';
+import VideoComplementario from './VideoComplementario.astro';
 
 interface Props {
   content: LearningExpansionContent;
@@ -42,4 +43,5 @@ const headingId = `expansion-${content.topic}`;
       <a href={source.href} target="_blank" rel="noreferrer">{source.label}<span aria-hidden="true"> ↗</span></a>
     ))}
   </div>
+  <VideoComplementario topic={content.topic} />
 </section>

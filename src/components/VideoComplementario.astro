@@ -1,0 +1,35 @@
+---
+import { videoResources } from '../data/video-resources';
+
+interface Props {
+  topic: string;
+}
+
+const { topic } = Astro.props;
+const video = videoResources[topic];
+
+if (!video) throw new Error(`No hay video complementario configurado para ${topic}`);
+---
+
+<section class="video-complementario" aria-label={`Video complementario: ${video.title}`}>
+  <div class="video-heading">
+    <div>
+      <p class="video-kicker"><span aria-hidden="true">▶</span> Sigue aprendiendo</p>
+      <h4>Un video para llevarlo a la práctica</h4>
+    </div>
+    <span class="video-language">{video.language}</span>
+  </div>
+  <a class="video-card" href={`https://www.youtube.com/watch?v=${video.id}`} target="_blank" rel="noopener noreferrer" aria-label={`Ver ${video.title} en YouTube, se abre en una pestaña nueva`}>
+    <span class="video-thumbnail">
+      <img src={`https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`} alt="" loading="lazy" />
+      <span class="video-play" aria-hidden="true">▶</span>
+      <span class="video-brand">YouTube</span>
+    </span>
+    <span class="video-copy">
+      <span class="video-channel">{video.channel}</span>
+      <strong>{video.title}</strong>
+      <span class="video-description">{video.description}</span>
+      <span class="video-watch">Ver video <span aria-hidden="true">↗</span></span>
+    </span>
+  </a>
+</section>
