@@ -1,7 +1,7 @@
 ---
 import '../styles/global.css';
 interface Props { title?: string; description?: string; }
-const { title = 'Arquitectura Empresarial de TI · Guía de estudio', description = 'Guía de consulta para los siete temas del curso Arquitectura Empresarial de TI.' } = Astro.props;
+const { title = 'Atlas de Arquitectura Empresarial de TI', description = 'Atlas editorial de estudio para conectar estrategia, procesos, datos y tecnología en siete capítulos.' } = Astro.props;
 ---
 <!doctype html>
-<html lang="es"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="description" content={description} /><meta name="theme-color" content="#102b3f" /><title>{title}</title></head><body><slot /><script>import '../scripts/course';</script></body></html>
+<html lang="es"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="description" content={description} /><meta name="theme-color" content="#f2efe6" /><title>{title}</title></head><body><slot /><script>import '../scripts/course';</script></body></html>
