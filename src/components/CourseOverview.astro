@@ -1,6 +1,7 @@
 ---
 import LearningExpansion from './LearningExpansion.astro';
 import { learningExpansions } from '../data/learning-expansions';
+const assetBase = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 ---
 <section class="hero" aria-labelledby="page-title">
           <div class="hero-copy">
@@ -20,7 +21,7 @@ import { learningExpansions } from '../data/learning-expansions';
             <a class="hero-button hero-button-secondary" href="#topic-search"><span aria-hidden="true">⌕</span> Buscar un concepto</a>
           </div>
           </div>
-          <img class="hero-art" src={`${import.meta.env.BASE_URL}images/arquitectura-empresarial-hero.png`} alt="" aria-hidden="true" fetchpriority="high" />
+          <img class="hero-art" src={`${assetBase}images/arquitectura-empresarial-hero.png`} alt="" aria-hidden="true" fetchpriority="high" />
         </section>
 
         <section class="quick-strip" aria-label="Resumen del curso">
