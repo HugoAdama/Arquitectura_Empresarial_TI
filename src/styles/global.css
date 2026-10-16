@@ -560,7 +560,7 @@ h2 { color: #202d37; font-size: clamp(2.25rem, 4vw, 3.7rem); line-height: .98; }
 .chapter-action span { width: 31px; height: 31px; border: 1px solid #bdb8a9; border-radius: 50%; background: transparent; color: #ae472f; }
 .chapter-accordion[open] > .chapter-summary { border-bottom: 1px solid #d5cfbf; background: transparent; }
 .chapter-panel { padding: .5rem clamp(.75rem,2vw,1.3rem) 1.4rem; }
-.topic-section > .section-heading { padding: .9rem 0 1rem; border: 0; border-bottom: 1px solid #bdb7a9; border-radius: 0; background: transparent; }
+.topic-section > .section-heading { padding: .9rem 0 1rem .5rem; border: 0; border-bottom: 1px solid #bdb7a9; border-radius: 0; background: transparent; }
 .topic-section > .section-heading::before { top: .95rem; bottom: 1rem; width: 3px; border-radius: 0; background: #e76547; }
 .topic-section > .section-heading .section-index { color: #c94c33; }
 .section-intro { max-width: 740px; color: #5e6863; font-size: .9rem; }
