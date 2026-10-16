@@ -5,9 +5,15 @@ import Sidebar from '../components/Sidebar.astro';
 import CourseOverview from '../components/CourseOverview.astro';
 import TopicCatalog from '../components/TopicCatalog.astro';
 import StudyResources from '../components/StudyResources.astro';
+import Questionnaires from '../components/Questionnaires.astro';
 ---
 <BaseLayout><SiteHeader /><div class="reading-progress" role="progressbar" aria-label="Progreso de lectura" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="reading-progress-bar"></span></div><div class="page-shell"><Sidebar /><main>
       <CourseOverview />
       <TopicCatalog />
       <StudyResources />
+      <Questionnaires />
+      <footer class="site-footer">
+        <span>Guía personal de estudio · Arquitectura Empresarial de TI</span>
+        <a href="#inicio">Volver arriba ↑</a>
+      </footer>
     </main></div></BaseLayout>

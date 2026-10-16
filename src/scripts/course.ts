@@ -55,6 +55,7 @@
         { id: 'glosario', label: 'Glosario' },
         { id: 'repaso', label: 'Repaso general' },
         { id: 'fuentes', label: 'Fuentes del curso' },
+        { id: 'cuestionarios', label: 'Cuestionarios · 4 niveles' },
       ];
 
       const readingProgress = document.querySelector<HTMLElement>('.reading-progress');

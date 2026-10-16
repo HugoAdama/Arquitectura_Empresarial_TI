@@ -1,0 +1,58 @@
+---
+import { questionnaires } from '../data/questionnaires';
+---
+
+<section class="content-section questionnaires-section" id="cuestionarios" aria-labelledby="questionnaires-title">
+  <div class="section-heading">
+    <div>
+      <p class="section-kicker">Práctica guiada · 120 preguntas</p>
+      <h2 id="questionnaires-title">Cuatro cuestionarios para avanzar paso a paso</h2>
+    </div>
+    <span class="section-index" aria-hidden="true">Q4</span>
+  </div>
+  <p class="questionnaires-intro">Cada cuestionario tiene 30 preguntas con respuestas explicadas. Intenta responder antes de abrir cada solución: el recorrido progresa desde conceptos fundamentales hasta decisiones integrales de arquitectura.</p>
+
+  <nav class="questionnaire-path" aria-label="Niveles de los cuestionarios">
+    {questionnaires.map((quiz) => (
+      <a class="questionnaire-level" href={`#${quiz.id}`}>
+        <span class="questionnaire-level-number">{quiz.number}</span>
+        <span><strong>{quiz.difficulty}</strong><small>{quiz.title}</small></span>
+        <span class="questionnaire-level-count">30 preguntas ↓</span>
+      </a>
+    ))}
+  </nav>
+
+  <div class="questionnaire-list">
+    {questionnaires.map((quiz) => (
+      <details class="questionnaire-accordion" id={quiz.id}>
+        <summary class="questionnaire-summary">
+          <span class="questionnaire-summary-number">{quiz.number}</span>
+          <span class="questionnaire-summary-copy">
+            <span class="questionnaire-meta">Nivel {quiz.number} · {quiz.difficulty} · 30 preguntas</span>
+            <strong>{quiz.title}</strong>
+            <small>{quiz.focus}</small>
+          </span>
+          <span class="questionnaire-toggle" aria-hidden="true">＋</span>
+        </summary>
+        <div class="questionnaire-content">
+          <p class="questionnaire-instruction">{quiz.instruction}</p>
+          <ol class="question-list">
+            {quiz.questions.map((item, index) => (
+              <li class="question-item">
+                <details>
+                  <summary>
+                    <span class="question-number">{String(index + 1).padStart(2, '0')}</span>
+                    <span class="question-text">{item.question}</span>
+                    <span class="answer-cue">Ver respuesta</span>
+                  </summary>
+                  <div class="model-answer"><strong>Respuesta desarrollada</strong><p>{item.answer}</p></div>
+                </details>
+              </li>
+            ))}
+          </ol>
+          <a class="questionnaire-backtop" href="#cuestionarios">Volver a los niveles ↑</a>
+        </div>
+      </details>
+    ))}
+  </div>
+</section>
