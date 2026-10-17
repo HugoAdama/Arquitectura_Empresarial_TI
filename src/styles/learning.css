@@ -23,7 +23,7 @@ html { font-size: calc(16px * var(--reader-font-scale, 1)); scroll-behavior: smo
 .preference-row button { min-width: 42px; min-height: 36px; border: 1px solid #ccd7d1; border-radius: 8px; background: #f6f8f4; color: #315e56; font-weight: 750; cursor: pointer; }
 .learning-roadmap { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .5rem .75rem; margin: 1rem 0 0; padding: 0; list-style: none; }
 .roadmap-item { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .25rem .6rem; padding: .75rem; border: 1px solid #e1e4dd; border-radius: 11px; background: #fff; transition: border-color .2s ease, background .2s ease; }
-.learning-roadmap > .roadmap-item:last-child:nth-child(odd) { grid-column: 1 / -1; width: calc((100% - .75rem) / 2); justify-self: center; }
+.learning-roadmap > .roadmap-item:last-of-type { grid-column: 1 / -1; width: calc((100% - .75rem) / 2); margin-inline: auto; }
 .roadmap-item.is-complete { border-color: #8db4a3; background: #f0f7f0; }
 .roadmap-copy { display: flex; gap: .65rem; align-items: flex-start; }
 .roadmap-number { color: #c16048; font: 400 1.25rem/1 'Instrument Serif', Georgia, serif; }
@@ -38,8 +38,8 @@ html { font-size: calc(16px * var(--reader-font-scale, 1)); scroll-behavior: smo
 .learning-activities .section-heading h2 { font-size: clamp(2rem, 3.6vw, 3.2rem); line-height: 1.1; }
 .learning-activities .section-index { line-height: 1; }
 .activity-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
-.activity-grid > .activity-card:last-child:nth-child(odd) { grid-column: 1 / -1; width: calc((100% - .75rem) / 2); justify-self: center; }
 .activity-card { min-width: 0; margin: 0; padding: .9rem; border: 1px solid #dce2d9; border-radius: 13px; background: #fff; }
+.activity-grid > .activity-card:last-of-type { grid-column: 1 / -1; width: calc((100% - .75rem) / 2); margin-inline: auto; }
 .activity-card legend { max-width: 100%; padding: 0 .3rem; color: #293a3d; font-size: .83rem; font-weight: 700; line-height: 1.5; }
 .activity-topic { display: block; margin-bottom: .25rem; color: #3e7b70; font-size: .65rem; letter-spacing: .04em; text-transform: uppercase; }
 .activity-options { display: grid; gap: .4rem; margin: .55rem 0; }
@@ -96,8 +96,8 @@ html.reader-focus .motion-reveal { opacity: 1; transform: none; }
 @media (max-width: 760px) {
   .learning-tools { grid-template-columns: 1fr; }
   .learning-roadmap, .activity-grid { grid-template-columns: 1fr; }
-  .learning-roadmap > .roadmap-item:last-child:nth-child(odd) { grid-column: auto; width: auto; }
-  .activity-grid > .activity-card:last-child:nth-child(odd) { grid-column: auto; width: auto; }
+  .learning-roadmap > .roadmap-item:last-of-type { grid-column: auto; width: auto; margin-inline: 0; }
+  .activity-grid > .activity-card:last-of-type { grid-column: auto; width: auto; margin-inline: 0; }
   .roadmap-item { gap: .35rem; }
 }
 @media (max-width: 520px) {
