@@ -6,9 +6,11 @@ import CourseOverview from '../components/CourseOverview.astro';
 import TopicCatalog from '../components/TopicCatalog.astro';
 import StudyResources from '../components/StudyResources.astro';
 import Questionnaires from '../components/Questionnaires.astro';
+import LearningHub from '../components/LearningHub.astro';
 ---
-<BaseLayout><SiteHeader /><div class="reading-progress" role="progressbar" aria-label="Progreso de lectura" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="reading-progress-bar"></span></div><div class="page-shell"><Sidebar /><main>
+<BaseLayout><a class="skip-link" href="#main-content">Saltar al contenido principal</a><SiteHeader /><div class="reading-progress" role="progressbar" aria-label="Desplazamiento por la página" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="reading-progress-bar"></span></div><div class="page-shell"><Sidebar /><main id="main-content" tabindex="-1" aria-label="Contenido de la guía">
       <CourseOverview />
+      <LearningHub />
       <TopicCatalog />
       <StudyResources />
       <Questionnaires />

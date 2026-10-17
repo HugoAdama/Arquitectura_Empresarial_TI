@@ -1,35 +1,16 @@
+---
+import { courseNavigation } from '../data/course-navigation';
+---
 <aside class="sidebar" aria-label="Navegación de la guía">
       <p class="sidebar-label">Mapa de capítulos</p>
         <details class="mobile-menu">
           <summary><span>Explorar la guía</span><span class="mobile-current" id="mobile-current">Tema 1 · Fundamentos</span></summary>
           <nav aria-label="Secciones del curso en móvil">
-            <a href="#idea">01 · Fundamentos</a>
-            <a href="#tema-2">02 · Dominios</a>
-            <a href="#tema-3">03 · Nube e infraestructura</a>
-            <a href="#tema-4">04 · Procesos</a>
-            <a href="#tema-5">05 · Servicios y APIs</a>
-            <a href="#tema-6">06 · Datos y analítica</a>
-            <a href="#tema-7">07 · Emergentes y gobierno</a>
-            <a href="#caso-banco">Caso del banco</a>
-            <a href="#glosario">Glosario</a>
-            <a href="#repaso">Repaso general</a>
-            <a href="#fuentes">Fuentes del curso</a>
-            <a href="#cuestionarios">Cuestionarios · 4 niveles</a>
+            {courseNavigation.map((item) => <a href={`#${item.id}`}>{item.sidebarLabel}</a>)}
           </nav>
         </details>
         <nav class="desktop-nav" aria-label="Secciones del curso">
-          <a href="#idea">01 · Fundamentos</a>
-          <a href="#tema-2">02 · Dominios</a>
-          <a href="#tema-3">03 · Nube e infraestructura</a>
-          <a href="#tema-4">04 · Procesos</a>
-          <a href="#tema-5">05 · Servicios y APIs</a>
-          <a href="#tema-6">06 · Datos y analítica</a>
-          <a href="#tema-7">07 · Emergentes y gobierno</a>
-          <a href="#caso-banco">Caso del banco</a>
-          <a href="#glosario">Glosario</a>
-          <a href="#repaso">Repaso general</a>
-          <a href="#fuentes">Fuentes del curso</a>
-          <a href="#cuestionarios">Cuestionarios · 4 niveles</a>
+          {courseNavigation.map((item) => <a href={`#${item.id}`}>{item.sidebarLabel}</a>)}
         </nav>
         <div class="sidebar-tip">
           <span class="tip-icon" aria-hidden="true">↗</span>

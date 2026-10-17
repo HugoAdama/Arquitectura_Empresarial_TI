@@ -1,0 +1,76 @@
+---
+import { topics, activities, cards, caseStages } from '../data/learning-tools';
+---
+
+<section class="learning-hub" id="ruta-aprendizaje" aria-labelledby="learning-hub-title">
+  <div class="section-heading">
+    <div><p class="section-kicker">Tu recorrido de estudio</p><h2 id="learning-hub-title">Aprende por etapas y retoma cuando quieras</h2></div>
+    <span class="section-index" aria-hidden="true">↗</span>
+  </div>
+  <div class="learning-tools">
+    <div class="learning-resume">
+      <p class="learning-eyebrow">Progreso guardado en este dispositivo</p>
+      <strong id="learning-progress-label" aria-live="polite">0 de 7 temas marcados como estudiados</strong>
+      <div class="learning-progress-track" role="progressbar" aria-label="Temas completados" aria-valuemin="0" aria-valuemax="7" aria-valuenow="0"><span id="learning-progress-bar"></span></div>
+      <a id="resume-learning" href="#idea">Empezar por fundamentos <span aria-hidden="true">→</span></a>
+      <button class="text-button" id="reset-learning-progress" type="button">Reiniciar mi progreso</button>
+    </div>
+    <fieldset class="reading-preferences">
+      <legend>Adapta la lectura</legend>
+      <div class="preference-row"><span>Tamaño del texto</span><div><button type="button" data-font-step="-1" aria-label="Reducir tamaño del texto">A−</button><button type="button" data-font-step="1" aria-label="Aumentar tamaño del texto">A+</button></div></div>
+      <label><input type="checkbox" id="contrast-toggle" /> Contraste alto</label>
+      <label><input type="checkbox" id="focus-toggle" /> Lectura enfocada</label>
+      <button class="text-button" id="reset-reading-preferences" type="button">Restablecer lectura</button>
+    </fieldset>
+  </div>
+  <ol class="learning-roadmap">
+    {topics.map((topic, index) => (
+      <li class="roadmap-item" data-roadmap-item={index}>
+        <div class="roadmap-copy"><span class="roadmap-number">{String(index + 1).padStart(2, '0')}</span><div><a href={`#${topic.id}`} class="roadmap-link">{topic.label}</a><small>{topic.time} · {topic.goal}</small></div></div>
+        <label class="roadmap-check"><input type="checkbox" data-topic-complete={index} /><span>Marcar como estudiado</span></label>
+        <details class="roadmap-practice"><summary>Meta de práctica</summary><p>{topic.task}</p></details>
+      </li>
+    ))}
+  </ol>
+</section>
+
+<section class="content-section learning-activities" id="actividades" aria-labelledby="activities-title">
+  <div class="section-heading"><div><p class="section-kicker">Comprueba lo que entendiste</p><h2 id="activities-title">Actividades rápidas por tema</h2></div><span class="section-index" aria-hidden="true">7×</span></div>
+  <p class="section-intro">Responde sin consultar el material. Recibirás una explicación inmediata y podrás volver a intentarlo. En los cuestionarios, la valoración también es personal: compárala con la respuesta desarrollada.</p>
+  <div class="activity-grid">
+    {activities.map((activity, index) => (
+      <fieldset class="activity-card" data-activity data-correct={activity.correct} data-explanation={activity.explanation}>
+        <legend><span class="activity-topic">Tema {index + 1} · {activity.topic}</span>{activity.question}</legend>
+        <div class="activity-options">{activity.options.map((option, optionIndex) => <label><input type="radio" name={`actividad-${index}`} value={optionIndex} /><span>{option}</span></label>)}</div>
+        <button type="button" class="activity-submit">Comprobar respuesta</button>
+        <p class="activity-feedback" aria-live="polite"></p>
+      </fieldset>
+    ))}
+  </div>
+</section>
+
+<section class="content-section case-workshop" id="caso-progresivo" aria-labelledby="case-workshop-title">
+  <div class="section-heading"><div><p class="section-kicker">Caso práctico acumulativo</p><h2 id="case-workshop-title">Diseña la evolución del banco por etapas</h2></div><span class="section-index" aria-hidden="true">↗</span></div>
+  <p class="section-intro">Usa lo aprendido en los siete temas para construir una recomendación. Abre cada etapa, piensa tu respuesta y luego consulta una pista.</p>
+  <div class="case-workshop-context"><strong>El reto:</strong> modernizar los servicios bancarios sin perder continuidad para 2,3 millones de clientes digitales, con dependencias legacy poco documentadas, regulación financiera y capacidad operativa limitada.</div>
+  <ol class="case-stages">{caseStages.map((stage, index) => (
+    <li><details><summary><span class="case-stage-number">0{index + 1}</span><strong>{stage.title}</strong><span>{stage.prompt}</span></summary><div class="case-stage-work"><p><strong>Tu respuesta:</strong> anota o explica en voz alta tu decisión y los supuestos que estás haciendo.</p><details class="case-hint"><summary>Ver una pista de análisis</summary><p>{stage.hint}</p></details></div></details></li>
+  ))}</ol>
+</section>
+
+<section class="content-section flashcard-section" id="repaso-activo" aria-labelledby="flashcard-title">
+  <div class="section-heading"><div><p class="section-kicker">Recuperación activa · repaso espaciado</p><h2 id="flashcard-title">Tarjetas para recordar conceptos clave</h2></div><span class="section-index" aria-hidden="true">↻</span></div>
+  <p class="section-intro">Intenta responder antes de revelar cada tarjeta. Indica cómo te fue y el sistema la programará para repaso en 1, 3 o 7 días.</p>
+  <div class="flashcard-controls"><span id="flashcard-count" aria-live="polite">Tarjeta 1 de 12</span><label><input type="checkbox" id="due-cards-only" /> Mostrar solo tarjetas pendientes</label><button type="button" id="reset-flashcards" class="text-button">Reiniciar repasos</button></div>
+  <article class="flashcard" id="flashcard" data-card-index="0" data-cards={JSON.stringify(cards)}>
+    <p class="flashcard-topic">Pregunta de repaso</p>
+    <h3 id="flashcard-front"></h3>
+    <div id="flashcard-back" class="flashcard-back" hidden></div>
+    <button type="button" id="reveal-flashcard" class="hero-button hero-button-primary">Mostrar respuesta</button>
+    <div class="flashcard-rating" hidden aria-label="Programa cuándo volver a mostrar esta tarjeta">
+      <button type="button" data-rating="again">Repasar mañana</button><button type="button" data-rating="hard">Repasar en 3 días</button><button type="button" data-rating="known">Repasar en 7 días</button>
+    </div>
+    <p id="flashcard-status" class="flashcard-status" aria-live="polite"></p>
+    <div class="flashcard-navigation"><button type="button" id="previous-flashcard">← Anterior</button><button type="button" id="next-flashcard">Siguiente →</button></div>
+  </article>
+</section>

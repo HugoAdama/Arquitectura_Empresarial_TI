@@ -36,16 +36,28 @@ import { questionnaires } from '../data/questionnaires';
         </summary>
         <div class="questionnaire-content">
           <p class="questionnaire-instruction">{quiz.instruction}</p>
-          <ol class="question-list">
+          <div class="quiz-tools" data-quiz-tools={quiz.id}>
+            <span data-quiz-summary aria-live="polite">Marca cómo te fue al revisar cada respuesta.</span>
+            <button type="button" class="text-button" data-review-filter>Mostrar preguntas por repasar</button>
+            <button type="button" class="text-button" data-review-reset>Reiniciar evaluación</button>
+          </div>
+          <ol class="question-list" data-quiz-list={quiz.id}>
             {quiz.questions.map((item, index) => (
-              <li class="question-item">
+              <li class="question-item" data-question-review={`${quiz.id}-${index + 1}`}>
                 <details>
                   <summary>
                     <span class="question-number">{String(index + 1).padStart(2, '0')}</span>
                     <span class="question-text">{item.question}</span>
                     <span class="answer-cue">Ver respuesta</span>
                   </summary>
-                  <div class="model-answer"><strong>Respuesta desarrollada</strong><p>{item.answer}</p></div>
+                  <div class="model-answer"><strong>Respuesta desarrollada</strong><p>{item.answer}</p>
+                    <div class="answer-self-check" role="group" aria-label={`Autoevaluar respuesta ${index + 1}`}>
+                      <span>¿Cómo te fue?</span>
+                      <button type="button" data-self-check="known">La respondí bien</button>
+                      <button type="button" data-self-check="partial">Parcialmente</button>
+                      <button type="button" data-self-check="review">La repasaré</button>
+                    </div>
+                  </div>
                 </details>
               </li>
             ))}
