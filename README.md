@@ -2,6 +2,8 @@
 
 Atlas de estudio interactivo para aprender arquitectura empresarial de TI mediante siete temas, recursos de consulta, autoevaluaciones, actividades, tarjetas de repaso y un caso práctico progresivo. El sitio se construye con Astro y se publica como contenido estático en GitHub Pages.
 
+Repositorio fuente: [HugoAdama/Arquitectura_Empresarial_TI](https://github.com/HugoAdama/Arquitectura_Empresarial_TI). El footer del sitio enlaza la atribución de desarrollo con este repositorio.
+
 ## Funciones de aprendizaje
 
 - Ruta de estudio por tema con objetivos, tiempos estimados y actividades sugeridas.

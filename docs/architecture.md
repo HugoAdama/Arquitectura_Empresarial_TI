@@ -56,3 +56,5 @@ El estado se conserva en `localStorage` por navegador y origen. Borrar los datos
 `astro.config.mjs` define el sitio y una ruta base de proyecto para GitHub Pages: `/Arquitectura_Empresarial_TI`. Los enlaces a activos públicos que deban funcionar bajo esa ruta deben construirse con `import.meta.env.BASE_URL` o con una utilidad de rutas compatible con Astro. El favicon se sirve desde `public/favicon.svg` y se enlaza en `src/layouts/BaseLayout.astro`.
 
 El archivo `tema1_completo.html` es un documento heredado y no es la fuente del sitio publicado. Los cambios de producto deben realizarse en `src/` y en sus datos fuente.
+
+El footer de `src/pages/index.astro` muestra la atribución “Desarrollado por Hugo Adama”. El nombre enlaza al [repositorio del proyecto](https://github.com/HugoAdama/Arquitectura_Empresarial_TI) en una pestaña nueva.
