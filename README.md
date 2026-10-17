@@ -33,7 +33,7 @@ El progreso, las preferencias, la autoevaluación y las fechas de repaso se guar
 - `src/styles/` contiene estilos globales y estilos de las herramientas de aprendizaje.
 - `public/` contiene activos estáticos, incluido el favicon.
 - `docs/` contiene la documentación de mantenimiento del proyecto.
-- `tema1_completo.html` es un material HTML heredado; el sitio publicado se genera desde `src/`.
+- `src/` es la fuente del sitio publicado.
 
 ## Desarrollo rápido
 
