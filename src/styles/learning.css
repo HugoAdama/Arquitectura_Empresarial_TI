@@ -2,6 +2,8 @@
 html { font-size: calc(16px * var(--reader-font-scale, 1)); scroll-behavior: smooth; }
 .learning-hub { max-width: 1120px; margin: 1.5rem auto 3rem; padding: 1.25rem; border: 1px solid #d9dfd5; border-radius: 18px; background: #faf9f3; scroll-margin-top: 5rem; }
 .learning-hub .section-heading { margin-bottom: 1rem; }
+.learning-hub .section-heading h2 { max-width: 920px; font-size: clamp(2.1rem, 3.8vw, 3.2rem); line-height: 1.08; }
+.learning-hub .section-index { flex: 0 0 auto; font-size: clamp(2.4rem, 4.2vw, 3.25rem); line-height: 1; }
 .learning-tools { display: grid; grid-template-columns: 1.2fr .8fr; gap: 1rem; }
 .learning-resume, .reading-preferences { min-width: 0; padding: 1rem; border: 1px solid #dbe3dc; border-radius: 13px; background: #fff; }
 .learning-eyebrow { margin: 0 0 .35rem; color: #38746d; font-size: .7rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
@@ -21,18 +23,22 @@ html { font-size: calc(16px * var(--reader-font-scale, 1)); scroll-behavior: smo
 .preference-row button { min-width: 42px; min-height: 36px; border: 1px solid #ccd7d1; border-radius: 8px; background: #f6f8f4; color: #315e56; font-weight: 750; cursor: pointer; }
 .learning-roadmap { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .5rem .75rem; margin: 1rem 0 0; padding: 0; list-style: none; }
 .roadmap-item { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .25rem .6rem; padding: .75rem; border: 1px solid #e1e4dd; border-radius: 11px; background: #fff; transition: border-color .2s ease, background .2s ease; }
+.learning-roadmap > .roadmap-item:last-child:nth-child(odd) { grid-column: 1 / -1; width: calc((100% - .75rem) / 2); justify-self: center; }
 .roadmap-item.is-complete { border-color: #8db4a3; background: #f0f7f0; }
 .roadmap-copy { display: flex; gap: .65rem; align-items: flex-start; }
 .roadmap-number { color: #c16048; font: 400 1.25rem/1 'Instrument Serif', Georgia, serif; }
 .roadmap-link { color: #2c5957; font-size: .82rem; font-weight: 750; text-decoration-thickness: 1px; text-underline-offset: 3px; }
 .roadmap-copy small { display: block; margin-top: .25rem; color: #65726b; font-size: .71rem; line-height: 1.45; }
-.roadmap-check { display: flex; align-items: center; gap: .28rem; color: #63726b; font-size: .67rem; white-space: nowrap; }
+.roadmap-check { display: flex; align-self: start; align-items: center; gap: .28rem; padding-top: .16rem; color: #63726b; font-size: .67rem; white-space: nowrap; }
 .roadmap-check input { accent-color: #3d8272; }
 .roadmap-practice { grid-column: 1 / -1; padding-top: .35rem; border-top: 1px solid #edf0ea; }
 .roadmap-practice summary { color: #567771; font-size: .7rem; }
 .roadmap-practice p { margin: .35rem 0 0; color: #566963; font-size: .75rem; }
 .learning-activities, .case-workshop, .flashcard-section { max-width: 1120px; margin: 0 auto 3.5rem; scroll-margin-top: 5rem; }
+.learning-activities .section-heading h2 { font-size: clamp(2rem, 3.6vw, 3.2rem); line-height: 1.1; }
+.learning-activities .section-index { line-height: 1; }
 .activity-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
+.activity-grid > .activity-card:last-child:nth-child(odd) { grid-column: 1 / -1; width: calc((100% - .75rem) / 2); justify-self: center; }
 .activity-card { min-width: 0; margin: 0; padding: .9rem; border: 1px solid #dce2d9; border-radius: 13px; background: #fff; }
 .activity-card legend { max-width: 100%; padding: 0 .3rem; color: #293a3d; font-size: .83rem; font-weight: 700; line-height: 1.5; }
 .activity-topic { display: block; margin-bottom: .25rem; color: #3e7b70; font-size: .65rem; letter-spacing: .04em; text-transform: uppercase; }
@@ -90,10 +96,14 @@ html.reader-focus .motion-reveal { opacity: 1; transform: none; }
 @media (max-width: 760px) {
   .learning-tools { grid-template-columns: 1fr; }
   .learning-roadmap, .activity-grid { grid-template-columns: 1fr; }
+  .learning-roadmap > .roadmap-item:last-child:nth-child(odd) { grid-column: auto; width: auto; }
+  .activity-grid > .activity-card:last-child:nth-child(odd) { grid-column: auto; width: auto; }
   .roadmap-item { gap: .35rem; }
 }
 @media (max-width: 520px) {
   .learning-hub { padding: .75rem; }
+  .learning-hub .section-heading h2 { font-size: clamp(1.9rem, 8vw, 2.5rem); }
+  .learning-hub .section-index { font-size: 2.2rem; }
   .roadmap-item { grid-template-columns: minmax(0, 1fr); }
   .roadmap-check { justify-self: start; padding-left: 2rem; }
   .case-stage-work { padding-left: .75rem; }
