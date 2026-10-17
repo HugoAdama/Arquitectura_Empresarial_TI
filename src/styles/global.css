@@ -651,6 +651,8 @@ h2 { color: #202d37; font-size: clamp(2.25rem, 4vw, 3.7rem); line-height: .98; }
   .quick-strip article { font-size: .66rem; }
   .quick-number { font-size: .58rem; }
   .video-thumbnail, .video-thumbnail img { min-height: 178px; }
+  .quick-strip { grid-template-columns: minmax(0, 1fr); }
+  .quick-strip article + article { border-top: 1px solid #c9c2b5; border-left: 0; }
 }
 
 /* Motion stays short and restrained so it supports reading without delaying it. */
@@ -700,6 +702,10 @@ html.motion-enabled .motion-reveal.is-visible { opacity: 1; transform: translate
 .hero-copy { max-width: min(50%, 620px); }
 .lesson-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .45rem 1.6rem; }
 .lesson-card, .lesson-card:nth-child(n) { grid-column: auto; }
+
+@media (min-width: 761px) and (max-width: 1100px) {
+  .hero-copy { max-width: min(72%, 620px); }
+}
 
 @media (max-width: 900px) {
   .page-shell { display: block; }
@@ -808,16 +814,24 @@ html.motion-enabled .motion-reveal.is-visible { opacity: 1; transform: translate
 .model-answer p { margin: .25rem 0 0; color: #505e5c; font-size: .82rem; line-height: 1.6; }
 .questionnaire-backtop { display: inline-block; margin-top: 1rem; color: #376e69; font-size: .75rem; font-weight: 700; text-underline-offset: 3px; }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .questionnaire-path { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 560px) {
+  .questionnaire-path { grid-template-columns: minmax(0, 1fr); gap: .45rem; margin-block: .85rem 1.2rem; }
+  .questionnaire-level { grid-template-columns: 2.4rem minmax(0, 1fr); padding: .75rem 1rem; }
   .questionnaire-summary { gap: .7rem; padding-inline: .3rem; }
   .questionnaire-summary-number { flex-basis: 2rem; font-size: 2rem; }
   .questionnaire-content { padding-inline: .2rem; }
   .question-item > details > summary { grid-template-columns: 1.7rem minmax(0, 1fr); gap: .45rem; }
   .answer-cue { grid-column: 2; }
   .model-answer { margin-left: 2.1rem; }
+}
+
+@media (max-width: 360px) {
+  .mobile-menu > summary { gap: .45rem; }
+  .mobile-menu > summary > span:first-child { white-space: nowrap; }
+  .mobile-current { max-width: 45%; }
 }
 
     
